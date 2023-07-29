@@ -1,4 +1,4 @@
-const TodoController = require('./todo.controller');
-module.exports ={
-    TodoController
-}
+const TodoController = require("./todo.controller");
+module.exports = {
+  TodoController,
+};

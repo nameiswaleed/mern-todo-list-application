@@ -1,5 +1,5 @@
-const Todos = require('./todo.model');
+const Todos = require("./todo.model");
 
-module.exports ={
-    Todos
-}
+module.exports = {
+  Todos,
+};

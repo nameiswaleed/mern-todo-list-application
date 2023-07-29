@@ -1,18 +1,28 @@
 import React, { useState } from "react";
 import { useAddTask } from "../../libs/apis";
 const AddTask = () => {
+  // use states
   const [task, setTask] = useState({ title: "", description: "" });
 
+  //handler functions
+  /**
+   * @description this function handle the onchange on fields
+   * @param e
+   */
   const handleFields = (e: any) => {
     setTask({ ...task, [e.target.name]: e.target.value });
     // console.log(task);
   };
 
-  const handleFormSubmit = async(e: any) => {
+  /**
+   * @description this function handle the submit function to add the taks
+   * @param e
+   */
+
+  const handleFormSubmit = async (e: any) => {
     e.preventDefault();
     // console.log(task);
-    await useAddTask(task.title,task.description);
-
+    await useAddTask(task.title, task.description);
   };
   return (
     <section className="flex items-center justify-center space-x-6 m-5">

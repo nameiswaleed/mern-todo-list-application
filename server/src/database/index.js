@@ -1,9 +1,11 @@
-const mongoose = require('mongoose');
-const config = require('../config');
-const conn = async ()=>{
-    await mongoose.connect(config.mongoURI)
-}
+const mongoose = require("mongoose");
+const config = require("../config");
 
-conn()
+// declaring the connection function
+const conn = async () => {
+  await mongoose.connect(config.mongoURI);
+};
 
-module.exports = mongoose.connection
+conn();
+//exporting database
+module.exports = mongoose.connection;

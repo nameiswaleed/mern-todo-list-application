@@ -1,5 +1,5 @@
 const { Todos } = require("../database/models");
-
+//add task
 const addTodo = async (title, description) => {
   try {
     await Todos.create({
@@ -12,25 +12,27 @@ const addTodo = async (title, description) => {
     return false;
   }
 };
+//delete task
 const deleteTodo = async (id) => {
   try {
-    await Todos.findByIdAndDelete(id)
+    await Todos.findByIdAndDelete(id);
     return true;
   } catch (err) {
     console.log(err);
     return false;
   }
 };
+// get all task
 const getTodos = async () => {
   try {
     const TodoList = await Todos.aggregate([
-        {
-            $project:{
-                _id:1,
-                title:1,
-                description:1
-            }
-        }
+      {
+        $project: {
+          _id: 1,
+          title: 1,
+          description: 1,
+        },
+      },
     ]);
     // console.log(TodoList)
     return TodoList;
@@ -43,5 +45,5 @@ const getTodos = async () => {
 module.exports = {
   addTodo,
   getTodos,
-  deleteTodo
+  deleteTodo,
 };
