@@ -66,5 +66,5 @@ const deleteTask = async (id: any) => {
   const response = await axios.request(config);
   return response;
 };
-
+// created hooks for calling app functions
 export { useFetch, useAddTask, deleteTask };

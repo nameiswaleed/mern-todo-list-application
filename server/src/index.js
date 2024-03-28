@@ -10,7 +10,7 @@ const app = express();
 app.use(cors(), express.json());
 //routes
 app.get("/", (req, res) => {
-  res.status(200).send("OK");
+  res.status(200).send("Server is running fine");
 });
 app.use("/api/todos", todoRouter);
 
