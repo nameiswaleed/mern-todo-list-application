@@ -23,6 +23,7 @@ db.on("open", () => {
     console.log(`🚀 Server running on port ${config.port}`);
   });
 });
+//error if db does not work server not start
 db.on("error", () => {
   console.error("[DATABASE THROWING ERROR]");
 });
