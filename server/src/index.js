@@ -7,6 +7,7 @@ const { todoRouter } = require("./routes");
 const app = express();
 
 //middlewares
+// cors and json
 app.use(cors(), express.json());
 //routes
 app.get("/", (req, res) => {
